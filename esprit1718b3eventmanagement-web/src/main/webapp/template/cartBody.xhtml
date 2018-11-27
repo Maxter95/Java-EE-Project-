@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+
+<h:form> 
+    <p:dataScroller value="#{cartBean.displayallCart()}" var="pro" chunkSize="10">
+        <f:facet name="header">
+            Scroll Down to Load More of My products
+        </f:facet>
+ 
+        <f:facet name="loader">
+            <p:commandButton type="button" value="More" icon="ui-icon-circle-triangle-s"/>
+        </f:facet>
+ 
+        <h:panelGrid columns="2" style="width:30%" columnClasses="logo,detail">
+ 			<f:facet name="header">
+					<p:graphicImage url="/resources/img/#{pro.image}"
+						width="100" height="100"/>
+				</f:facet>
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Name:" />
+                    <h:outputText value="#{pro.name_product}" style="font-weight: bold"/>
+ 
+                    <h:outputText value="Brand:" />
+                    <h:outputText value="#{pro.brand_categorie}" style="font-weight: bold"/>
+ 
+                    <h:outputText value="Payment Type:" />
+                    <h:outputText value="#{pro.payment_type}" style="font-weight: bold"/>
+                </h:panelGrid>
+                	<h:form>
+                	<p:commandButton value="Remove from my Cart" action="#{cartBean.removeProduct(pro)}"  />
+                	</h:form>
+            </p:outputPanel>
+        </h:panelGrid>
+    </p:dataScroller>
+</h:form>
+
+	
+
+
+</ui:composition>

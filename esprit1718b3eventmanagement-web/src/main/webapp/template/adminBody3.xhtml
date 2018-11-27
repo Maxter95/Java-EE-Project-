@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+	<p:dataTable var="prod" value="#{productBean.FindWithName(productBean.recherche)}">
+         				
+    <p:column headerText="Name">
+        <h:outputText value="#{prod.name_product}" />
+    </p:column>
+ 
+    <p:column headerText="price">
+        <h:outputText value="#{prod.price_product}" />
+    </p:column>
+ 
+    <p:column headerText="Payment">
+        <h:outputText value="#{prod.payment_type}" />
+    </p:column>
+ 
+    <p:column headerText="Delevery">
+        <h:outputText value="#{prod.delivery_mode}" />
+    </p:column>
+    <p:column headerText="Quantite">
+        <h:outputText value="#{prod.number_available}" />
+    </p:column>
+ 
+    <p:column headerText="Views">
+        <h:outputText value="#{prod.views}" />
+    </p:column>
+    <p:column headerText="Brand">
+        <h:outputText value="#{prod.brand_categorie}" />
+    </p:column>
+   
+
+    
+</p:dataTable>
+
+</ui:composition>

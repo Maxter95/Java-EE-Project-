@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/index2.xhtml">
+
+	<ui:define name="oooko">
+		<link rel="stylesheet"
+			href="#{request.contextPath}/assets/css/presets.css" type="text/css" />
+		<h:form>
+			<p:messages id="messages" globalOnly="true" showDetail="true"
+				autoUpdate="true" closable="true" />
+			<p:separator></p:separator>
+		</h:form>
+		<div class="ui-fluid">
+			<h:form>
+
+
+				<!-- 	<p:dataTable id="gr" var="con" value="#{holiday.congeez}">  -->
+
+
+				<p:dataTable id="radioDT" var="us" value="#{holiday.users}"
+					style="margin-bottom:0">
+					<f:facet name="header">
+
+					</f:facet>
+
+					<p:column headerText="Cin">
+
+						<h:outputText value="#{us.cin}" />
+					</p:column>
+					<p:column headerText="First name">
+
+						<h:outputText value="#{us.first_name}" />
+					</p:column>
+
+					<p:column headerText="Last name">
+
+						<h:outputText value="#{us.last_name}" />
+					</p:column>
+					<p:column headerText="Salary">
+
+						<h:outputText value="#{us.salary_staff}" />
+					</p:column>
+					<p:column headerText="years of work">
+
+						<h:outputText value="#{us.yearswork}" />
+					</p:column>
+					<p:column headerText="Increase">
+
+						<h:outputText value="#{us.increase}" />
+					</p:column>
+
+
+				</p:dataTable>
+
+
+				<h:commandButton action="#{holiday.DoCheckSalary()}"
+					value="Check Salarys" class="btn btn-common" />
+
+			</h:form>
+			
+		</div>
+
+	</ui:define>
+
+</ui:composition>

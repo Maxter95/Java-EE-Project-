@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	</h:head>
+	<h:body>
+			<p:chart type="pie" model="#{productChartBean.pieModel1}"
+				style="width:400px;height:400px" />
+			<p:chart type="bar" model="#{productChartBean.horizontalBarModel}"
+				style="height:300px" />
+
+			<div class="clear"></div>
+	
+		<div class="clear"></div>
+		
+		</h:body>
+
+</html>

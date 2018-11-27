@@ -1,0 +1,119 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/index3.xhtml">
+
+	<ui:define name="okokk">
+		<link rel="stylesheet"
+			href="#{request.contextPath}/assets/css/presets.css" type="text/css" />
+		<h:form>
+			<p:messages id="messages" globalOnly="true" showDetail="true"
+				autoUpdate="true" closable="true" />
+			<p:separator></p:separator>
+		</h:form>
+		<div class="ui-fluid">
+			<h:form>
+
+
+				<!-- 	<p:dataTable id="gr" var="con" value="#{holiday.congeez}">  -->
+
+
+				<p:dataTable id="radioDT" var="con" value="#{holiday.congeez}"
+					selection="#{holiday.selectedTable}" rowKey="#{con.id_co}"
+					style="margin-bottom:0">
+					<f:facet name="header">
+
+					</f:facet>
+					<p:column selectionMode="single" />
+					<p:column headerText="date">
+
+						<h:outputText value="#{con.date_co}" />
+					</p:column>
+
+					<p:column headerText="type">
+
+						<h:outputText value="#{con.type_co}" />
+					</p:column>
+
+					<p:column headerText="certificate">
+
+						<h:outputText value="#{con.certificat}" />
+					</p:column>
+
+					<p:column headerText="days">
+
+						<h:outputText value="#{con.nbjrs_co}" />
+					</p:column>
+
+
+					<p:column headerText="Action">
+						<p:commandButton action="#{holiday.doRemove(con)}" value="Remove" />
+					</p:column>
+					
+				</p:dataTable>
+
+
+
+
+			</h:form>
+			<div class="ui-fluid">
+				<p:fieldset>
+					<h:form id="forrm" enctype="multipart/form-data">
+						<h:panelGrid id="gr" columns="2"
+							columnClasses="ui-grid-col-2,ui-grid-col-10" layout="grid"
+							styleClass="ui-panelgrid-blank">
+							<p:outputLabel for="date" value="Date:" />
+							<p:calendar id="date" value="#{holiday.selectedTable.date_co}" />
+
+							<h:outputText value="Type" />
+
+
+							<p:selectOneMenu id="type_co"
+								value="#{holiday.selectedTable.type_co}">
+								<f:selectItem itemLabel="Select One" itemValue="" />
+								<f:selectItem itemLabel="Medical" itemValue="Medical" />
+								<f:selectItem itemLabel="Normal" itemValue="Normal" />
+
+							</p:selectOneMenu>
+
+
+
+							<h:outputText value="certificat" />
+
+
+							<p:selectOneMenu id="certificat"
+								value="#{holiday.selectedTable.certificat}" required="true">
+								<f:selectItem itemLabel="Select One" itemValue="" />
+								<f:selectItem itemLabel="Available" itemValue="Available" />
+								<f:selectItem itemLabel="Unavailable" itemValue="Unavailable" />
+
+							</p:selectOneMenu>
+
+
+
+
+
+							<h:outputText value="nombre de jours" />
+
+
+
+							<p:inputText id="nbjrs_co"
+								value="#{holiday.selectedTable.nbjrs_co}" required="true"
+								requiredMessage=" Required">
+								<f:ajax event="blur" execute="@this" render="msg_name" />
+							</p:inputText>
+							<p:message for="nbjrs_co" styleClass="error" id="msg_name" />
+
+
+
+							<h:commandButton id="btn_suubmit" action="#{holiday.doUpdate()}"
+								value="update holiday request" class="btn btn-common" />
+
+						</h:panelGrid>
+					</h:form>
+				</p:fieldset>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

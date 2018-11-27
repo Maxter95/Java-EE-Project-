@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="765.0" scaleShape="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HollidayrequestController">
+   <children>
+      <AnchorPane layoutX="181.0" layoutY="279.0" opacity="0.29" prefHeight="246.0" prefWidth="257.0" style="-fx-background-color: gray; -fx-background-radius: 70;" />
+      <ImageView fitHeight="540.0" fitWidth="787.0" opacity="0.33" pickOnBounds="true">
+         <image>
+            <Image url="@../images/ok.jpg" />
+         </image>
+      </ImageView>
+      <JFXDatePicker fx:id="dateC" layoutX="219.0" layoutY="296.0" promptText="Holliday date" />
+      <JFXTextField fx:id="nbjr" layoutX="219.0" layoutY="422.0" promptText="Number of days" />
+     
+      <JFXComboBox fx:id="cbType" layoutX="219.0" layoutY="338.0" prefHeight="26.0" prefWidth="135.0" promptText="Type" />
+      <JFXComboBox fx:id="certif" layoutX="219.0" layoutY="377.0" prefHeight="26.0" prefWidth="135.0" promptText="Certificate" />
+      <JFXButton fx:id="BTsub_co" layoutX="258.0" layoutY="482.0" onAction="#submit_co" style="-fx-background-color: #00A2D3;" text="Submit " />
+      <TableView fx:id="tablec" layoutX="69.0" layoutY="76.0" prefHeight="200.0" prefWidth="656.0">
+        <columns>
+          <TableColumn fx:id="cdate" prefWidth="173.60002899169922" style="-fx-background-color: gray;" text="Date" />
+          <TableColumn fx:id="ctype" prefWidth="118.39996337890625" style="-fx-background-color: gray;" text="Type" />
+            <TableColumn fx:id="ccertif" prefWidth="106.39996337890625" style="-fx-background-color: gray;" text="Certififcate" />
+            <TableColumn fx:id="cdays" prefWidth="102.40005493164062" style="-fx-background-color: gray;" text="Days" />
+            <TableColumn fx:id="cstatus" prefWidth="201.60003662109375" style="-fx-background-color: gray;" text="Status" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="bdelete" layoutX="605.0" layoutY="339.0" onAction="#delete" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #00A2D3;" text="Delete" />
+      <JFXButton fx:id="bupdate" layoutX="605.0" layoutY="393.0" onAction="#update" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #00A2D3;" text="Update" />
+   </children>
+</AnchorPane>

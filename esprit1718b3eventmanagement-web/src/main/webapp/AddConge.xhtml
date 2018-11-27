@@ -1,0 +1,143 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/index3.xhtml">
+
+	<ui:define name="okok">
+		<link rel="stylesheet"
+			href="#{request.contextPath}/assets/css/presets.css" type="text/css" />
+		<h:form>
+			<p:messages id="messages" globalOnly="true" showDetail="true"
+				autoUpdate="true" />
+			<p:separator></p:separator>
+		</h:form>
+		<div class="ui-fluid">
+			<h:form>
+
+
+				<!-- 	<p:dataTable id="gr" var="con" value="#{holiday.congeez}">  -->
+
+
+				<p:dataTable id="radioDT" var="con" value="#{holiday.congeez}"
+					selection="#{holiday.selectedTable}" rowKey="#{con.id_co}">
+					<f:facet name="header">
+
+					</f:facet>
+					<p:column selectionMode="single"
+						style="width:30px;text-align:center" />
+					<p:column headerText="date">
+
+						<h:outputText value="#{con.date_co}" />
+					</p:column>
+
+					<p:column headerText="type">
+
+						<h:outputText value="#{con.type_co}" />
+					</p:column>
+
+					<p:column headerText="certificate">
+
+						<h:outputText value="#{con.certificat}" />
+					</p:column>
+
+					<p:column headerText="days">
+
+						<h:outputText value="#{con.nbjrs_co}" />
+					</p:column>
+					<p:column headerText="certificate">
+
+						<h:outputText value="#{con.status_co}" />
+					</p:column>
+
+					<p:column headerText="Remove ">
+						<p:commandButton action="#{holiday.doRemove(con)}" value="Remove" />
+					</p:column>
+					<p:column headerText="Select">
+						<h:commandButton action="#{holiday.affiche()}" value="select"
+							styleClass="ti-arrow-right" />
+					</p:column>
+				</p:dataTable>
+
+
+
+
+			</h:form>
+			<div class="ui-fluid">
+				<p:fieldset>
+					<h:form id="forrm" >
+						<h:panelGrid id="gr" columns="2">
+							<p:outputLabel for="date" value="Date:" />
+							<p:calendar id="date" value="#{holiday.conges.date_co}" />
+
+							<h:outputText value="Type" />
+
+
+							<p:selectOneMenu id="type_co" value="#{holiday.conges.type_co}"
+								required="true">
+								<f:selectItem itemLabel="Select One" itemValue="" />
+								<f:selectItem itemLabel="Medical" itemValue="Medical" />
+								<f:selectItem itemLabel="Normal" itemValue="Normal" />
+
+							</p:selectOneMenu>
+
+
+
+							<h:outputText value="certificat" />
+
+
+							<p:selectOneMenu id="certificat"
+								value="#{holiday.conges.certificat}" required="true">
+								<f:selectItem itemLabel="Select One" itemValue="" />
+								<f:selectItem itemLabel="Available" itemValue="Available" />
+								<f:selectItem itemLabel="Unavailable" itemValue="Unavailable" />
+
+							</p:selectOneMenu>
+
+
+
+
+
+							<h:outputText value="nombre de jours" />
+
+
+
+							<p:inputText id="nbjrs_co" value="#{holiday.conges.nbjrs_co}"
+								required="true" requiredMessage=" Required">
+								<f:ajax event="blur" execute="@this" render="msg_name" />
+							</p:inputText>
+							<p:message for="nbjrs_co" styleClass="error" id="msg_name" />
+
+
+							<p:commandButton id="btn_submit" action="#{holiday.doAddCo()}"
+								value="Add holiday request"  styleClass="btn btn-common btn-rm"/>
+
+							<li><a
+								href="http://localhost:18080/esprit1718b3eventmanagement-web/updateConge.jsf">update
+									holiday request</a></li>
+
+						</h:panelGrid>
+					</h:form>
+				</p:fieldset>
+			</div>
+		</div>
+	</ui:define>
+	<script type="text/javascript" src="../assets/js/jquery-min.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../assets/js/material.min.js"></script>
+	<script type="text/javascript" src="../assets/js/material-kit.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.parallax.js"></script>
+	<script type="text/javascript" src="../assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="../assets/js/main.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/jquery.counterup.min.js"></script>
+	<script type="text/javascript" src="../assets/js/waypoints.min.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/jasny-bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="../assets/js/form-validator.min.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/contact-form-script.js"></script>
+</ui:composition>

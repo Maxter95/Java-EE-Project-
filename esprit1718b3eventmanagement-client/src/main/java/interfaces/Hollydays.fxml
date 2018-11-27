@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="765.0" scaleShape="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HollidaysController">
+	<!-- TODO Add Nodes -->
+	<children>
+      <ImageView fitHeight="548.0" fitWidth="813.0" opacity="0.45" pickOnBounds="true">
+         <image>
+            <Image url="@../images/ok.jpg" />
+         </image>
+      </ImageView>
+	<TableView fx:id="tablec" layoutX="27.0" layoutY="76.0" prefHeight="200.0" prefWidth="699.0">
+        <columns>
+          <TableColumn fx:id="cdate" prefWidth="191.99993133544922" style="-fx-background-color: gray;" text="Date" />
+          <TableColumn fx:id="ctype" prefWidth="115.20001220703125" style="-fx-background-color: gray;" text="Type" />
+            <TableColumn fx:id="ccertif" prefWidth="89.60003662109375" style="-fx-background-color: gray;" text="Certififcate" />
+            <TableColumn fx:id="cdays" prefWidth="118.40005493164062" style="-fx-background-color: gray;" text="Days" />
+            <TableColumn fx:id="cstatus" prefWidth="184.79998779296875" style="-fx-background-color: gray;" text="Status" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="traiter" layoutX="304.0" layoutY="315.0" onAction="#bttraiter" prefHeight="40.0" prefWidth="278.0" ripplerFill="#1919af" style="-fx-background-color: #00A2D3;" text="Analyse Holiday Requests" />
+      </children>
+</AnchorPane>

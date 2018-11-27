@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controllers.StandfController">
+   <children>
+      <TableView fx:id="tablec" layoutX="224.0" layoutY="78.0" prefHeight="200.0" prefWidth="314.0">
+         <columns>
+            <TableColumn fx:id="tstand" prefWidth="96.0" text="Type Stand" />
+            <TableColumn fx:id="pstand" prefWidth="114.0" text="Price" />
+            <TableColumn fx:id="dstand" minWidth="0.0" prefWidth="102.0" text="Description" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

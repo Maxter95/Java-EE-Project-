@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<h:form> 
+        <p:dataScroller value="" var="" chunkSize="10">
+        <f:facet name="header">
+            Scroll Down to Load More of My products
+        </f:facet>
+ 
+        <f:facet name="loader">
+            <p:commandButton type="button" value="More" icon="ui-icon-circle-triangle-s"/>
+        </f:facet>
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Name:" />
+                    <h:outputText value="#{productBean.name}" style="font-weight: bold"/>
+                     <h:outputText value="Brand:" />
+                    <h:outputText value="#{productBean.brand}" style="font-weight: bold"/>
+                     <h:outputText value="Payment Type:" />
+                    <h:outputText value="#{productBean.payment}" style="font-weight: bold"/>
+                     <h:outputText value="Quantity Left:" />
+                    <h:outputText value="#{productBean.numberavailable}" style="font-weight: bold"/>
+                     <h:outputText value="Price:" />
+                    <h:outputText value="#{productBean.price}" style="font-weight: bold"/>
+                     <h:outputText value="Views:" />
+                    <h:outputText value="#{productBean.views}" style="font-weight: bold"/>
+                    <h:outputText value="Delivery Mode:" />
+                    <h:outputText value="#{productBean.del}" style="font-weight: bold"/>
+                </h:panelGrid>
+            </p:outputPanel>
+         
+        </h:panelGrid>
+         <h:form>
+				<p:commandButton    value="Buy now"  action="#{productBean.Buy(productBean.ID)}" />
+			</h:form>
+ </p:dataScroller>
+</h:form>
+
+
+</ui:composition>

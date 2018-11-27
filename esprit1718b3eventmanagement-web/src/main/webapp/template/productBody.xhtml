@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<h3>All Products</h3>
+	<p:accordionPanel value="#{productBean.displayallProduct()}" var="pro">
+		<p:tab title="Title of product  :  #{pro.name_product}">
+			<h:panelGrid columns="2" cellpadding="5">
+				<f:facet name="header">
+					<p:graphicImage url="/resources/img/#{pro.image}"
+						width="250" height="250"/>
+				</f:facet>
+				<h:outputText value="Brand:" style="font-weight: bold" />
+				<h:outputText value="#{pro.brand_categorie}" />
+				<h:outputText value="Payment Type:" style="font-weight: bold" />
+				<h:outputText value="#{pro.payment_type}" />
+				<h:outputText value="Date:" style="font-weight: bold" />
+				<h:outputText value="#{pro.date}" />
+			</h:panelGrid>
+			<h:form>
+				<p:commandButton    value="Show details"  action="#{productBean.showDetails(pro)}" />
+				<p:commandButton value="Add to cart" actionListener="#{cartBean.addProductToCart(pro)}" />
+			
+			</h:form>
+		</p:tab>
+	</p:accordionPanel>
+
+
+</ui:composition>

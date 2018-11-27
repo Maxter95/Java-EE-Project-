@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="765.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProfilController">
+   <children>
+      <Pane fx:id="pane_company" layoutX="48.0" layoutY="248.0" prefHeight="241.0" prefWidth="697.0" style="-fx-background-color: #f8f8f8; -fx-border-color: #020e90;" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="23.0" prefHeight="28.0" prefWidth="236.0" text="Company Information :" textFill="#020e90">
+               <font>
+                  <Font name="Comic Sans MS" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tf_company_name" focusColor="#8e1deb" labelFloat="true" layoutX="57.0" layoutY="83.0" promptText="Company Name" unFocusColor="#405cfc" />
+            <JFXTextField fx:id="tf_company_address" focusColor="#8e1deb" labelFloat="true" layoutX="259.0" layoutY="161.0" promptText="Address" unFocusColor="#405cfc" />
+            <JFXComboBox fx:id="cb_company_domain" focusColor="#8e1deb" labelFloat="true" layoutX="57.0" layoutY="161.0" prefHeight="25.0" prefWidth="135.0" promptText="Company Domain" unFocusColor="#405cfc" />
+            <JFXButton layoutX="554.0" layoutY="189.0" onAction="#saveChangeCompany" opacity="0.76" prefHeight="28.0" prefWidth="129.0" style="-fx-background-color: #020e90;" text="Save Change" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXTextArea fx:id="area_description_company" focusColor="#8e1deb" labelFloat="true" layoutX="259.0" layoutY="57.0" prefHeight="77.0" prefWidth="364.0" promptText="Description Company" unFocusColor="#405cfc" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane_user_info" layoutX="277.0" layoutY="248.0" prefHeight="241.0" prefWidth="482.0" style="-fx-background-color: #f8f8f8; -fx-border-color: #020e90;">
+         <children>
+            <Label layoutX="28.0" layoutY="14.0" prefHeight="28.0" prefWidth="200.0" text="User Information" textFill="#020e90">
+               <font>
+                  <Font name="Comic Sans MS" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tf_first_name" focusColor="#8e1deb" labelFloat="true" layoutX="39.0" layoutY="74.0" promptText="First Name" unFocusColor="#405cfc" />
+            <JFXTextField fx:id="tf_last_name" focusColor="#8e1deb" labelFloat="true" layoutX="223.0" layoutY="74.0" promptText="Last Name" unFocusColor="#405cfc" />
+            <JFXTextField fx:id="tf_phone" focusColor="#8e1deb" labelFloat="true" layoutX="223.0" layoutY="137.0" promptText="Phone Number" unFocusColor="#405cfc" />
+            <JFXTextField fx:id="tf_email" focusColor="#8e1deb" labelFloat="true" layoutX="39.0" layoutY="137.0" promptText="Email" unFocusColor="#405cfc" />
+            <JFXTextField fx:id="tf_address" focusColor="#8e1deb" labelFloat="true" layoutX="39.0" layoutY="188.0" promptText="Address" unFocusColor="#405cfc" />
+            <JFXButton layoutX="370.0" layoutY="199.0" onAction="#saveChange" opacity="0.76" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #020e90;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="tf_cin" focusColor="#8e1deb" labelFloat="true" layoutX="223.0" layoutY="188.0" promptText="Natinal ID Card" unFocusColor="#405cfc" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane_profil_info" layoutX="20.0" layoutY="248.0" prefHeight="241.0" prefWidth="236.0" style="-fx-background-color: #f8f8f8; -fx-border-color: #020e90;">
+         <children>
+            <JFXPasswordField fx:id="tf_repeat_password" focusColor="#8e1deb" labelFloat="true" layoutX="60.0" layoutY="196.0" promptText="Repeat Password" unFocusColor="#405cfc" />
+            <JFXPasswordField fx:id="tf_new_password" focusColor="#8e1deb" labelFloat="true" layoutX="60.0" layoutY="151.0" promptText="New Password" unFocusColor="#405cfc" />
+            <JFXPasswordField fx:id="tf_old_password" focusColor="#8e1deb" labelFloat="true" layoutX="59.0" layoutY="108.0" promptText="Old Password" unFocusColor="#405cfc" />
+            <JFXTextField fx:id="tf_username" focusColor="#8e1deb" labelFloat="true" layoutX="59.0" layoutY="64.0" promptText="Username" unFocusColor="#405cfc" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="200.0" text="Profil Information" textFill="#020e90">
+               <font>
+                  <Font name="Comic Sans MS" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="14.0" prefHeight="221.0" prefWidth="765.0" style="-fx-background-color: #eeeeee;">
+         <children>
+            <Label layoutX="423.0" layoutY="125.0" prefHeight="28.0" prefWidth="74.0" text="Domain:" textFill="#5b69a1">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#5b69a1" glyphStyleClass="" iconName="TRELLO" />
+               </graphic>
+            </Label>
+            <Label layoutX="423.0" layoutY="158.0" prefHeight="28.0" prefWidth="74.0" text="Address:" textFill="#5b69a1">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#5b69a1" glyphStyleClass="" iconName="MAP_MARKER" />
+               </graphic>
+            </Label>
+            <HBox fx:id="btn_edit_company" alignment="CENTER_LEFT" layoutX="629.0" layoutY="179.0" onMouseClicked="#editCompany" prefHeight="38.0" prefWidth="105.0" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIcon fill="#5b69a1" iconName="PENCIL_SQUARE_ALT" size="1.5em" />
+                  <Text fx:id="label_edit" fill="#5b69a1" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Company">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Label fx:id="label_company_name" layoutX="236.0" layoutY="125.0" prefHeight="28.0" prefWidth="147.0" text="Company Name" textFill="#5b69a1">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#5b69a1" iconName="USERS" />
+               </graphic>
+            </Label>
+            <Label fx:id="label_domain" layoutX="497.0" layoutY="125.0" prefHeight="28.0" prefWidth="174.0" text="Domain" textFill="#564d5e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_address_company" layoutX="497.0" layoutY="158.0" prefHeight="28.0" prefWidth="254.0" text="Address" textFill="#564d5e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="34.0" opacity="0.47" prefHeight="87.0" prefWidth="765.0" style="-fx-background-color: #020e90;">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="624.0" layoutY="50.0" onMouseClicked="#editProfil" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="PENCIL_SQUARE_ALT" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Profil">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Label fx:id="label_first_name" layoutX="235.0" layoutY="8.0" prefHeight="28.0" prefWidth="200.0" text="First Last Name" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="USER" />
+               </graphic>
+            </Label>
+            <Label fx:id="label_post" layoutX="247.0" layoutY="41.0" prefHeight="28.0" prefWidth="105.0" text="Post " textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="STREET_VIEW" />
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="image_profile" fitHeight="183.0" fitWidth="174.0" layoutX="52.0" layoutY="57.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Fadhel.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="163.0" layoutY="193.0" onAction="#Browse" text="Browse" />
+   </children>
+</Pane>

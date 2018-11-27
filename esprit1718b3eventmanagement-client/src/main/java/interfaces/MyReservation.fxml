@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1000.0" maxWidth="500.0" minHeight="500.0" minWidth="1000.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MyReservationController">
+   <children>
+      <TableView fx:id="tablec" layoutX="14.0" layoutY="61.0" prefHeight="200.0" prefWidth="670.0">
+         <columns>
+            <TableColumn fx:id="standnumber" prefWidth="96.0" text="Stand Number" />
+            <TableColumn fx:id="day" prefWidth="114.0" text="Day" />
+            <TableColumn fx:id="shour" minWidth="0.0" prefWidth="102.0" text="Start Hour" />
+            <TableColumn fx:id="ehour" prefWidth="116.0" text="End Hour" />
+            <TableColumn fx:id="standsize" prefWidth="88.0" text="Stand Size" />
+            <TableColumn fx:id="customernumber" prefWidth="157.0" text="Customer Number" />
+         </columns>
+      </TableView>
+      <JFXDatePicker fx:id="dates" layoutX="224.0" layoutY="288.0" promptText="date" />
+      <JFXTextField fx:id="endhour" labelFloat="true" layoutX="224.0" layoutY="414.0" promptText="End Hour" />
+      <JFXTextField fx:id="cin" labelFloat="true" layoutX="224.0" layoutY="448.0" promptText="Customer Number" />
+      <JFXComboBox fx:id="stSize" layoutX="224.0" layoutY="330.0" prefHeight="26.0" prefWidth="135.0" promptText="Stand Size" />
+      <JFXButton fx:id="b_submit" layoutX="263.0" layoutY="480.0" onAction="#submit_co" text="Submit " textFill="#d31414">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="bdelete" layoutX="614.0" layoutY="389.0" onAction="#delete" prefHeight="76.0" prefWidth="123.0" text="Delete" textFill="#c91414">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="bupdate" layoutX="500.0" layoutY="402.0" onAction="#update" text="Update" textFill="#d71414">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></JFXButton>
+      <JFXTextField fx:id="starthour" labelFloat="true" layoutX="224.0" layoutY="376.0" promptText="Start Hour" />
+      <Label fx:id="lab" layoutX="309.0" layoutY="24.0" text="My Reservations" textFill="#d31717">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

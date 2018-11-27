@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StandAdminController">
+   <children>
+      <TableView fx:id="tablec" layoutX="224.0" layoutY="78.0" prefHeight="200.0" prefWidth="314.0">
+         <columns>
+            <TableColumn fx:id="tstand" prefWidth="96.0" text="Type Stand" />
+            <TableColumn fx:id="pstand" prefWidth="114.0" text="Price" />
+            <TableColumn fx:id="dstand" minWidth="0.0" prefWidth="103.0" text="Description" />
+         </columns>
+      </TableView>
+      <JFXComboBox fx:id="typestand" layoutX="298.0" layoutY="323.0" prefHeight="26.0" prefWidth="135.0" promptText="Type Stand" />
+      <JFXTextField fx:id="description" labelFloat="true" layoutX="298.0" layoutY="425.0" promptText="Description" />
+      <JFXComboBox fx:id="procestand" layoutX="298.0" layoutY="379.0" prefHeight="26.0" prefWidth="135.0" promptText="Price Stand" />
+      <JFXButton fx:id="sdelete" layoutX="538.0" layoutY="384.0" onAction="#delete" text="Delete" textFill="#d01616">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="supdate" layoutX="650.0" layoutY="384.0" onAction="#update" text="Update" textFill="#d01616">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="ssubmit" layoutX="331.0" layoutY="472.0" onAction="#submit_co" text="Submit " textFill="#d01616">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <Label fx:id="lab" layoutX="308.0" layoutY="37.0" text="All Stands " textFill="#dd1f1f">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

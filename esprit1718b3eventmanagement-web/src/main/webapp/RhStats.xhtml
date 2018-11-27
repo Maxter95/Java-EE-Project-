@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/index2.xhtml">
+
+	<ui:define name="oookoo">
+		<link rel="stylesheet"
+			href="#{request.contextPath}/assets/css/presets.css" type="text/css" />
+		<div>
+
+			
+			<p:chart type="pie" model="#{holiday.pieModel1}"
+				style="width:400px;height:400px" />
+			<p:chart type="bar" model="#{holiday.horizontalBarModel}"
+				style="height:300px" />
+				
+		</div>
+
+	</ui:define>
+
+</ui:composition>

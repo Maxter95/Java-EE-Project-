@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<ui:include src="/template/Header.xhtml" />
+
+</h:head>
+
+<body>
+	<section id="intro" class="section-intro">
+		<div class="logo-menu">
+			<div class="search-container">
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 style="line-height: 60px;">Welcome To EspritManagement</h1>
+							<h2>Configure Your Stand as You Which</h2>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Find Job Section Start -->
+
+	<section class="find-job section">
+		<div class="container">
+		<ui:insert name="pageContent"> </ui:insert>
+		
+		
+		</div>
+	</section>
+
+	
+
+	
+	
+
+	
+
+	
+	<!-- Infobox Section End -->
+
+
+</body>
+
+<footer>
+	<ui:insert name="footer">
+		<ui:include src="/template/footer.xhtml" />
+	</ui:insert>
+</footer>
+
+</html>

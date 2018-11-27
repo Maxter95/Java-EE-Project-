@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+<h1> Vous pouvez ajouter votre stand</h1>
+
+<h:form>
+<h:panelGrid columns="2">
+<h:outputText value="description_stand :" />
+<h:inputText value="#{st.stand.description_stand}" />
+
+<h:outputText value="price_stand" />
+<h:inputText value="#{st.stand.price_stand}" />
+
+<h:outputText value="type_stand" />
+
+<h:inputSecret value="#{st.stand.type_stand}" />
+
+
+<h:commandButton action="#{st.add()}" value="Add"/>
+</h:panelGrid>
+</h:form>
+</body> 
+</html>

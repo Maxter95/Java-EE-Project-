@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/index2.xhtml">
+
+	<ui:define name="oook">
+		<link rel="stylesheet"
+			href="#{request.contextPath}/assets/css/presets.css" type="text/css" />
+		<h:form>
+			<p:messages id="messages" globalOnly="true" showDetail="true"
+				autoUpdate="true" closable="true" />
+			<p:separator></p:separator>
+		</h:form>
+		<div class="ui-fluid">
+			<h:form>
+
+
+				<!-- 	<p:dataTable id="gr" var="con" value="#{holiday.congeez}">  -->
+
+
+				<p:dataTable id="radioDT" var="con" value="#{holiday.congeez}"
+					style="margin-bottom:0">
+					<f:facet name="header">
+
+					</f:facet>
+
+					<p:column headerText="date">
+
+						<h:outputText value="#{con.date_co}" />
+					</p:column>
+
+					<p:column headerText="type">
+
+						<h:outputText value="#{con.type_co}" />
+					</p:column>
+
+					<p:column headerText="certificate">
+
+						<h:outputText value="#{con.certificat}" />
+					</p:column>
+					<p:column headerText="certificate">
+
+						<h:outputText value="#{con.status_co}" />
+					</p:column>
+
+					<p:column headerText="days">
+
+						<h:outputText value="#{con.nbjrs_co}" />
+					</p:column>
+
+
+
+				</p:dataTable>
+
+
+				<h:commandButton action="#{holiday.DoCheckHolidays()}"
+					value="Check holiday requests" class="btn btn-common" />
+
+			</h:form>
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>

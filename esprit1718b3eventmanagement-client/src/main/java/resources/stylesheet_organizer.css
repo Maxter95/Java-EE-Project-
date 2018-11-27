@@ -1,0 +1,31 @@
+.hover_border:hover{
+	-fx-border-color: #0fbcf9;
+	-fx-border-width: 0px 0px 0px 4px;
+	-fx-background-color: #34e7e4e0;
+	-fx-cursor: hand;
+	}	
+	
+.cursorhand{
+		-fx-cursor: hand;
+	}
+.search{
+	-fx-prompt-text-fill:#485460;
+}
+.popupBtn{
+	-fx-pref-height:20px;
+	-fx-pref-width:100px;
+	-fx-background-color: #FFF;
+	-fx-text-fill :#383d9a;
+	-fx-font-size :16px;
+	-fx-font-family:Eras Bold ITC;
+}
+.popupBtn:hover{
+	-fx-background-color:#0011ff ;
+	-fx-text-fill :#FFF;
+	-fx-border-color: #383d9a;
+	-fx-border-width: 1px;
+	-fx-border-style: solid;
+	-fx-cursor: hand;
+	-fx-font-size :16px;
+	-fx-font-family:Eras Bold ITC;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/template/template.xhtml"
+      xmlns:p="http://primefaces.org/ui">
+    
+     <ui:define name="pageContent">
+                 
+                  <h:form>
+                  	<p:dataTable id="radioDT" var="lrservation" value="#{reservation.lrservation}" 
+                  	selection="#{reservation.reservationselected}" rowKey="#{lrservation.standNumber}" style="margin-bottom:0">
+        
+        <f:facet name="header">
+          
+        </f:facet>
+        <p:column selectionMode="single" style="width:16px;text-align:center"/>
+        <p:column headerText="Reservation's customer number">
+            <h:outputText value="#{lrservation.customerNumber}" />
+        </p:column>
+        <p:column headerText="Reservation's day">
+            <h:outputText value="#{lrservation.day}" />
+        </p:column>
+        <p:column headerText="Reservation's start hour">
+            <h:outputText value="#{lrservation.startHour}" />
+        </p:column>
+        <p:column headerText="Reservation's end hour">
+            <h:outputText value="#{lrservation.endHour}" />
+        </p:column>
+        <p:column headerText="Reservation's stand size">
+            <h:outputText value="#{lrservation.standSize}" />
+        </p:column>
+       
+    </p:dataTable>
+    <h:commandButton action="#{reservation.doDeleteRs()}" value="Delete" styleClass="ti-arrow-right" />
+    <h:commandButton action="#{reservation.pages()}" value="Stand's List" styleClass="ti-arrow-right" />
+     <h:commandButton action="#{reservation.envoi()}" value="send mail" styleClass="ti-arrow-right" />
+     
+ <h:panelGrid columns="2">
+
+
+</h:panelGrid>
+    </h:form> 
+   </ui:define> 
+</ui:composition>

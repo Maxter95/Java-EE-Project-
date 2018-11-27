@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" template="/template/index.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageContent">
+
+		<h:form>
+			<p:dataTable id="radioDT" var="lsstand" value="#{standList.lsstand}"
+				selection="#{standList.standSelected}" rowKey="#{lsstand.id_s}"
+				style="margin-bottom:0">
+				<f:facet name="header">
+
+				</f:facet>
+				<p:column selectionMode="single"
+					style="width:16px;text-align:center" />
+				<p:column headerText="Stand's Description">
+					<h:outputText value="#{lsstand.description_stand}" />
+				</p:column>
+				<p:column headerText="Stand's Price">
+					<h:outputText value="#{lsstand.price_stand}" />
+				</p:column>
+				<p:column headerText="Stand's Type">
+					<h:outputText value="#{lsstand.type_stand}" />
+				</p:column>
+
+
+			</p:dataTable>
+
+			<h:inputText value="#{standList.budget}" />
+			<h:commandButton action="#{standList.doCalculReste()}" value="calcul"
+				styleClass="ti-arrow-right" />
+			<p:commandButton value="show potential" onclick="PF('dlg').show();"></p:commandButton>
+			<h:commandButton action="#{standList.pageadd()}" value="Add Stand"
+				styleClass="ti-arrow-right" />
+			<h:commandButton action="#{standList.doDeleteSt()}" value="Delete"
+				styleClass="ti-arrow-right" />
+			<h:commandButton action="#{standList.doUpdateSt()}" value="update"
+				styleClass="ti-arrow-right" />
+			<h:commandButton action="#{standList.init()}" value="refresh page"
+				styleClass="ti-arrow-right" />
+			<h:commandButton action="#{standList.pagest()}"
+				value="Stands Reservations" styleClass="ti-arrow-right" />
+			<p:dialog widgetVar="dlg" header="Dialog Header" width="250"
+				height="100">
+				<p:outputLabel> you can buy with your current budget #{standList.nbr} stands, and if you add another stand if you add #{standList.com} </p:outputLabel>
+			</p:dialog>
+		</h:form>
+
+
+
+
+
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListUserController">
+   <children>
+      <Text fill="#8d91b9" layoutX="77.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List all Users" wrappingWidth="214.13671875">
+         <font>
+            <Font name="Arial Bold Italic" size="29.0" />
+         </font>
+      </Text>
+      <FlowPane fx:id="main" layoutX="25.0" layoutY="117.0" prefHeight="400.0" prefWidth="722.0">
+         <children>
+            <JFXTreeTableView fx:id="table_user" prefHeight="402.0" prefWidth="726.0" stylesheets="@../resources/main.css" />
+         </children>
+      </FlowPane>
+      <JFXTextField fx:id="tf_filter" labelFloat="true" layoutX="36.0" layoutY="75.0" promptText="Filter By First Name" />
+   </children>
+</Pane>

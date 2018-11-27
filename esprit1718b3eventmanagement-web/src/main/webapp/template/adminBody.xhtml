@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+
+	
+<h:form>
+	<h1>add Produit</h1>
+			<h:panelGrid columns="2" >
+				<h:outputText value=" produitTitle:" />
+				<h:inputText
+					value="#{productBean.product.name_product}" />	
+					<h:outputText value=" produitNumberAvaible:" />
+					<p:inputText
+					value="#{productBean.product.number_available}" />	
+					<h:outputText value=" produitPaymentType:" />
+					<h:inputText
+					value="#{productBean.product.payment_type}" />
+         <p:outputLabel for="event" value="Select Event:" />
+        <p:calendar id="event" value="#{productBean.product.date}"/>      
+					<h:outputText value=" produitDeleveryType:" />
+					<h:inputText
+					value="#{productBean.product.delivery_mode}" />	
+					<h:outputText value=" produitBrand:" />
+					<h:selectOneMenu 	value="#{productBean.product.brand_categorie}" >
+					<f:selectItem itemLabel="selectionner le brand" itemValue=""/>
+					<f:selectItems value="#{categorie.findallb()}"/>)	
+					</h:selectOneMenu>
+					<h:outputText value=" produitPrice:" />	
+					<h:inputText
+					value="#{productBean.product.price_product}" />	
+					<h:outputText value=" produitViews:" />	
+					<h:inputText
+					value="#{productBean.product.views}" />	
+				
+			</h:panelGrid>
+	   <h:form>
+   <h:commandButton value="Add Product"   action="#{productBean.addProduct()}"   />
+   </h:form>
+		</h:form>
+		
+
+</ui:composition>
